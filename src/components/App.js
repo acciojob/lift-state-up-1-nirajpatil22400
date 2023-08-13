@@ -1,13 +1,20 @@
+import React, { useState } from "react";
+import "./../styles/App.css";
+import ChildComponent from "./ChildComponent";
 
-import React from "react";
-import './../styles/App.css';
+function App() {
+  const [showModal, setShowModal] = useState(false);
 
-const App = () => {
+  const handleClick = () => {
+    setShowModal(true);
+  };
+
   return (
-    <div>
-        {/* Do not remove the main div */}
+    <div class="parent">
+      <h1>Parent Component</h1>
+      <ChildComponent showModal={showModal} handleClick={handleClick} />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
